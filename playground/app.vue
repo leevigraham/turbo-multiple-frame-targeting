@@ -50,7 +50,7 @@ const valueForm = useState('v3', randomHash)
 
       <div class="form-content">
         <form
-          data-turbo-frame="dynamic-frame form-frame"
+          data-turbo-frame="form-frame dynamic-frame"
           data-testid="form"
         >
           <button type="submit">data-turbo-frame="dynamic-frame form-frame"</button>
