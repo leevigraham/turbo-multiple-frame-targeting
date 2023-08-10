@@ -33,7 +33,7 @@ const valueForm = useState('v3', randomHash)
         <span data-testid="static-value" v-text="valueStatic" />
       </turbo-frame>
     </div>
-    
+
     <div class="container">
       <span>Dynamic:</span>
       <turbo-frame id="dynamic-frame">
@@ -41,37 +41,21 @@ const valueForm = useState('v3', randomHash)
       </turbo-frame>
     </div>
 
-    <turbo-frame id="form-frame" class="container">
+    <div class="container">
       <span>Form:</span>
-      <span data-testid="form-value" v-text="valueForm" />
+      <turbo-frame id="form-frame">
+        <span data-testid="form-value" v-text="valueForm" />
+      </turbo-frame>
+    </div>
 
       <div class="form-content">
-        <a
-          :href="$route.path"
-          data-turbo-frame="form-frame dynamic-frame"
-          data-testid="link"
-        >data-turbo-frame="form-frame dynamic-frame"</a>
-        <a
-          :href="$route.path"
-          data-turbo-frame="dynamic-frame _self"
-          data-testid="link-self"
-        >data-turbo-frame="dynamic-frame _self"</a>
-        
         <form
-          data-turbo-frame="form-frame dynamic-frame"
+          data-turbo-frame="dynamic-frame form-frame"
           data-testid="form"
         >
-          <button type="submit">data-turbo-frame="form-frame dynamic-frame"</button>
-        </form>
-        
-        <form
-          data-turbo-frame="dynamic-frame _self"
-          data-testid="form-self"
-        >
-          <button type="submit">data-turbo-frame="dynamic-frame _self"</button>
+          <button type="submit">data-turbo-frame="dynamic-frame form-frame"</button>
         </form>
       </div>
-    </turbo-frame>
   </div>
 </template>
 
